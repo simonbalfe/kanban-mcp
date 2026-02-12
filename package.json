@@ -1,15 +1,10 @@
 {
   "name": "kanban",
   "version": "1.0.50",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+    "dev": "concurrently \"bun run dev:back\" \"bun run dev:front\"",
+    "dev:back": "cd back && bun run dev",
+    "dev:front": "cd front && bun run dev"
+  }
 }
